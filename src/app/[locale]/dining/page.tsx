@@ -2,7 +2,7 @@ import {getTranslations} from "next-intl/server";
 import PageLayout from "@/components/PageLayout";
 import Hero from "@/components/Hero";
 import Reveal from "@/components/Reveal";
-import Image from "next/image";
+import {Clock} from "lucide-react";
 import Link from "next/link";
 
 export default async function DiningPage({params}: {params: {locale: string}}) {
@@ -79,53 +79,47 @@ export default async function DiningPage({params}: {params: {locale: string}}) {
           ))}
         </div>
 
-        <div className="mt-14 grid gap-8 md:grid-cols-12 items-center">
+        <div className="mt-14">
           <Reveal>
-            <div className="md:col-span-6">
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-foreground/10 bg-surface/20">
-                <Image
-                  src="/assets/images/dining/dining-main.jpg"
-                  alt="Restaurant interior placeholder"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                  loading="lazy"
-                  quality={85}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/75 via-background/15 to-transparent" />
-              </div>
-            </div>
-          </Reveal>
-          <Reveal>
-            <div className="md:col-span-6">
-              <h3 className="font-heading text-3xl leading-tight text-foreground">
-                Hours
-                <span className="block">of Operation</span>
-              </h3>
-              <div className="mt-5 max-w-[340px]">
-                <div className="space-y-0 divide-y divide-foreground/10">
-                  <div className="flex items-center justify-between gap-6 py-3">
-                    <span className="text-sm font-semibold">Breakfast</span>
-                    <span className="text-sm text-foreground/90">7:00 AM – 10:00 AM</span>
+            <div className="relative overflow-hidden rounded-3xl border border-foreground/10 bg-surface/20 p-6 md:p-10">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(176,141,87,0.35),transparent_55%),radial-gradient(circle_at_85%_10%,rgba(176,141,87,0.22),transparent_50%)]" />
+              <div className="relative flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+                <div className="flex items-start gap-5 max-w-[720px]">
+                  <div className="relative h-16 w-16 rounded-full bg-background/20 border border-foreground/10 flex items-center justify-center flex-shrink-0 text-accent">
+                    <Clock className="h-7 w-7" />
                   </div>
-                  <div className="flex items-center justify-between gap-6 py-3">
-                    <span className="text-sm font-semibold">Lunch</span>
-                    <span className="text-sm text-foreground/90">12:00 PM – 3:00 PM</span>
-                  </div>
-                  <div className="flex items-center justify-between gap-6 py-3">
-                    <span className="text-sm font-semibold">Dinner</span>
-                    <span className="text-sm text-foreground/90">6:00 PM – 10:30 PM</span>
+                  <div>
+                    <h3 className="font-heading text-3xl md:text-4xl leading-tight">
+                      Hours
+                      <span className="block">of Operation</span>
+                    </h3>
+                    <div className="mt-5 max-w-[340px]">
+                      <div className="space-y-0 divide-y divide-foreground/10">
+                        <div className="flex items-center justify-between gap-6 py-3">
+                          <span className="text-sm font-semibold">Breakfast</span>
+                          <span className="text-sm text-foreground/90">7:00 AM – 10:00 AM</span>
+                        </div>
+                        <div className="flex items-center justify-between gap-6 py-3">
+                          <span className="text-sm font-semibold">Lunch</span>
+                          <span className="text-sm text-foreground/90">12:00 PM – 3:00 PM</span>
+                        </div>
+                        <div className="flex items-center justify-between gap-6 py-3">
+                          <span className="text-sm font-semibold">Dinner</span>
+                          <span className="text-sm text-foreground/90">6:00 PM – 10:30 PM</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-7 flex flex-col sm:flex-row gap-3">
+                      <Link
+                        href={`/${params.locale}/contact?purpose=restaurant`}
+                        className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-foreground hover:brightness-110 transition"
+                      >
+                        {tCommon("reserveTable")}
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              <div className="mt-7">
-                <Link
-                  href={`/${params.locale}/contact?purpose=restaurant`}
-                  className="inline-flex items-center justify-center rounded-full bg-accent px-7 py-3 text-sm font-semibold text-accent-foreground hover:brightness-110 w-full sm:w-auto"
-                >
-                  {tCommon("reserveTable")}
-                </Link>
               </div>
             </div>
           </Reveal>
