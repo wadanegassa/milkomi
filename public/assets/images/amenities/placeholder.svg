@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Amenities placeholder">
+  <rect width="1200" height="800" fill="#17120f"/>
+  <rect x="100" y="100" width="1000" height="600" rx="30" fill="#221a14" stroke="#b08d57" stroke-opacity="0.35"/>
+  <text x="50%" y="50%" text-anchor="middle" fill="#f3efe8" font-size="40" font-family="serif">Amenities Placeholder</text>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#171310"/>
+  <rect x="70" y="70" width="1060" height="660" rx="26" fill="#221b16" stroke="#b08d57" stroke-opacity="0.35"/>
+  <text x="50%" y="50%" text-anchor="middle" fill="#f3efe8" font-size="42" font-family="serif">Amenities Placeholder</text>
+</svg>
+

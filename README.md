@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Milkomi Hotel Website
 
-## Getting Started
+Production-style portfolio/pitch website for Milkomi Hotel built with:
 
-First, run the development server:
+- Next.js App Router + TypeScript
+- Tailwind CSS
+- Framer Motion
+- `next-intl` (English / Amharic / Afaan Oromo)
+- React Hook Form
+- Telegram Bot API integration via `/api/telegram`
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.example` to `.env.local` and set:
 
-## Learn More
+- `TELEGRAM_BOT_TOKEN`
+- `TELEGRAM_CHAT_ID`
 
-To learn more about Next.js, take a look at the following resources:
+Without these, booking/event forms will render but Telegram submission will fail.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Asset folders
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Replace placeholder SVG files with real images using the same filenames/paths under:
 
-## Deploy on Vercel
+- `public/assets/images/hero`
+- `public/assets/images/rooms`
+- `public/assets/images/amenities`
+- `public/assets/images/dining`
+- `public/assets/images/events`
+- `public/assets/images/gallery/*`
+- `public/assets/images/about`
+- `public/assets/images/offers`
+- `public/assets/images/logo`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The UI already references these paths, so image swaps are drop-in.

@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "home": "Home",
+    "rooms": "Rooms & Suites",
+    "amenities": "Amenities",
+    "dining": "Dining",
+    "events": "Events & Conferences",
+    "gallery": "Gallery",
+    "about": "About Us",
+    "offers": "Offers & Packages",
+    "contact": "Contact & Booking"
+  },
+  "language": {
+    "en": "English",
+    "am": "አማ (Amharic)",
+    "om": "Afaan Oromo"
+  },
+  "common": {
+    "bookNow": "Book Now",
+    "learnMore": "Learn More",
+    "viewAllRooms": "View All Rooms",
+    "requestQuote": "Request a Quote",
+    "claimOffer": "Claim Offer",
+    "backToHome": "Back to Home",
+    "submitRequest": "Submit Request",
+    "chatToBook": "Chat to Book",
+    "reserveTable": "Reservation Request"
+  },
+  "footer": {
+    "contactTitle": "Contact",
+    "address": "Placeholder address: Milkomi Avenue, City Center, Ethiopia",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "quickLinks": "Quick Links",
+    "copyright": "All rights reserved.",
+    "websiteBy": "Website by Pro"
+  },
+  "forms": {
+    "eventQuote": {
+      "name": "Full name",
+      "phone": "Phone",
+      "email": "Email (optional)",
+      "eventType": "Event type",
+      "date": "Event date",
+      "guestCount": "Estimated guests",
+      "message": "Message",
+      "submit": "Submit quote request"
+    },
+    "booking": {
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email (optional)",
+      "checkIn": "Check-in date",
+      "checkOut": "Check-out date",
+      "roomType": "Room type",
+      "guests": "Number of guests",
+      "message": "Message",
+      "submit": "Submit booking request"
+    }
+  },
+  "pages": {
+    "home": {
+      "hero": {
+        "title": "Milkomi Luxury Hotel",
+        "tagline": "Placeholder copy: Unwind in timeless comfort, inspired service, and refined hospitality in the heart of the city."
+      },
+      "welcome": {
+        "title": "Welcome to Milkomi",
+        "body": "Placeholder copy: Designed for modern travelers who appreciate quiet luxury—every detail crafted to help you rest, recharge, and enjoy."
+      },
+      "featuredRooms": { "title": "Featured Rooms" },
+      "amenities": { "title": "Amenities & Facilities" },
+      "events": { "title": "Events & Conferences" },
+      "dining": { "title": "Dining Experience" },
+      "testimonials": { "title": "Guest Reviews" },
+      "gallery": { "title": "Gallery Preview" },
+      "offers": { "title": "Offers & Packages" },
+      "finalCta": {
+        "title": "Ready to experience Milkomi?",
+        "body": "Placeholder copy: Tell us your dates and we’ll prepare the perfect stay."
+      }
+    },
+    "rooms": {
+      "hero": {
+        "title": "Rooms & Suites",
+        "tagline": "Placeholder copy: Thoughtfully styled spaces—choose your comfort, your view, and your pace."
+      },
+      "introTitle": "Explore your stay",
+      "introBody": "Placeholder copy: Browse room types, compare key amenities, and book in minutes."
+    },
+    "amenities": {
+      "hero": { "title": "Amenities & Facilities", "tagline": "Placeholder copy: Everything you need—warm service, modern comfort, and reliable facilities." },
+      "introTitle": "Full amenities at a glance",
+      "introBody": "Placeholder copy: From Wi‑Fi to generator backup, Milkomi is built for comfort and convenience."
+    },
+    "dining": {
+      "hero": { "title": "Dining", "tagline": "Placeholder copy: A refined culinary journey—local flavors and international favorites." },
+      "introTitle": "A restaurant you’ll remember",
+      "introBody": "Placeholder copy: Enjoy breakfast, specialty dishes, and carefully curated beverages in an elegant setting."
+    },
+    "events": {
+      "hero": { "title": "Events & Conferences", "tagline": "Placeholder copy: Weddings, corporate meetings, and unforgettable gatherings—handled with elegance." },
+      "requestTitle": "Request a Quote",
+      "introBody": "Placeholder copy: Share your event details and we’ll get back quickly with a tailored proposal."
+    },
+    "gallery": {
+      "hero": { "title": "Gallery", "tagline": "Placeholder copy: Discover Milkomi through rooms, dining, events, and ambience." },
+      "tabs": {
+        "exterior": "Exterior",
+        "rooms": "Rooms",
+        "restaurant": "Restaurant",
+        "events": "Events",
+        "amenities": "Amenities"
+      }
+    },
+    "about": {
+      "hero": { "title": "About Milkomi", "tagline": "Placeholder copy: Our mission is hospitality that feels personal, polished, and effortless." },
+      "storyTitle": "Our story & mission",
+      "locationTitle": "Location matters",
+      "credentialsTitle": "Credentials & Awards"
+    },
+    "offers": {
+      "hero": { "title": "Offers & Packages", "tagline": "Placeholder copy: Seasonal deals and exclusive packages—made for memorable stays." },
+      "termsTitle": "Terms & conditions",
+      "termsBody": "Placeholder copy: Availability may vary. Prices shown are starting rates and can change during peak seasons."
+    },
+    "contact": {
+      "hero": { "title": "Contact & Booking", "tagline": "Placeholder copy: Send us your request—we’ll confirm quickly." },
+      "formTitle": "Booking request",
+      "contactTitle": "Contact details"
+    }
+  }
+}
+
