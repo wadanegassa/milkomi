@@ -1,4 +1,3 @@
-import {getTranslations} from "next-intl/server";
 import {notFound} from "next/navigation";
 
 import PageLayout from "@/components/PageLayout";
@@ -12,23 +11,20 @@ import Link from "next/link";
 export default async function RoomDetailPage({
   params,
 }: {
-  params: {locale: string; slug: string};
+  params: {slug: string};
 }) {
-  const locale = params.locale as "en" | "am" | "om";
-  const tCommon = await getTranslations("common");
-
   const room = rooms.find((r) => r.slug === params.slug);
   if (!room) notFound();
 
   return (
-    <PageLayout locale={params.locale}>
+    <PageLayout>
       <Hero
-        title={room.name[locale]}
-        tagline={room.description[locale]}
+        title={room.name}
+        tagline={room.description}
         images={room.galleryImages.slice(0, 2)}
         primaryCta={{
-          label: tCommon("bookNow"),
-          href: `/${params.locale}/contact?room=${encodeURIComponent(room.slug)}`,
+          label: "Book Now",
+          href: `/contact?room=${encodeURIComponent(room.slug)}`,
         }}
       />
 
@@ -38,15 +34,15 @@ export default async function RoomDetailPage({
             <div>
               <h2 className="font-heading text-3xl">Room details</h2>
               <p className="mt-4 text-foreground/80 leading-relaxed">
-                Placeholder copy: Starting from ${room.startingPriceUSD}/night. Capacity:{" "}
+                Rates start from ${room.startingPriceUSD} per night. Accommodates up to{" "}
                 {room.capacity}.
               </p>
             </div>
             <Link
-              href={`/${params.locale}/contact?room=${encodeURIComponent(room.slug)}`}
+              href={`/contact?room=${encodeURIComponent(room.slug)}`}
               className="inline-flex items-center justify-center rounded-full bg-accent px-7 py-3 text-sm font-semibold text-accent-foreground hover:brightness-110"
             >
-              {tCommon("bookNow")}
+              Book Now
             </Link>
           </div>
         </Reveal>
@@ -57,7 +53,7 @@ export default async function RoomDetailPage({
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-foreground/10 bg-surface/20">
                 <Image
                   src={src}
-                  alt={`${room.name[locale]} image ${idx + 1}`}
+                  alt={`${room.name} image ${idx + 1}`}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
@@ -79,7 +75,7 @@ export default async function RoomDetailPage({
                     key={idx}
                     className="rounded-xl border border-foreground/10 bg-surface/20 px-4 py-3 text-sm text-foreground/85"
                   >
-                    {a[locale]}
+                    {a}
                   </li>
                 ))}
               </ul>
@@ -90,14 +86,14 @@ export default async function RoomDetailPage({
               <div className="rounded-3xl border border-foreground/10 bg-surface/25 p-6">
                 <h4 className="font-heading text-xl">Booking note</h4>
                 <p className="mt-3 text-sm text-foreground/75 leading-relaxed">
-                  Placeholder copy: When you submit your request, we’ll confirm availability and share the best rate for your dates.
+                  Submit your booking request and our front desk team will confirm availability and share the best rate for your selected dates.
                 </p>
                 <div className="mt-6">
                   <Link
-                    href={`/${params.locale}/contact?room=${encodeURIComponent(room.slug)}`}
+                    href={`/contact?room=${encodeURIComponent(room.slug)}`}
                     className="inline-flex w-full items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground hover:brightness-110"
                   >
-                    {tCommon("submitRequest")}
+                    Submit Request
                   </Link>
                 </div>
               </div>
@@ -108,4 +104,3 @@ export default async function RoomDetailPage({
     </PageLayout>
   );
 }
-

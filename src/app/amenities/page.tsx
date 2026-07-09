@@ -1,5 +1,3 @@
-import {getTranslations} from "next-intl/server";
-
 import PageLayout from "@/components/PageLayout";
 import Hero from "@/components/Hero";
 import Reveal from "@/components/Reveal";
@@ -9,35 +7,30 @@ import {amenities} from "@/data/amenities";
 import Image from "next/image";
 import Link from "next/link";
 
-export default async function AmenitiesPage({params}: {params: {locale: string}}) {
-  const locale = params.locale as "en" | "am" | "om";
-  const tAmenities = await getTranslations("pages.amenities");
-  const tCommon = await getTranslations("common");
-  const tNav = await getTranslations("nav");
-
+export default async function AmenitiesPage() {
   const spotlight = amenities.find((a) => a.slug === "spa") ?? amenities[0];
 
   return (
-    <PageLayout locale={params.locale}>
+    <PageLayout>
       <Hero
-        title={tAmenities("hero.title")}
-        tagline={tAmenities("hero.tagline")}
-        imageSrc="/assets/images/amenities/amenity-main.jpg"
-        primaryCta={{label: tCommon("bookNow"), href: `/${params.locale}/contact`}}
+        title="Amenities & Facilities"
+        tagline="Everything you need for a seamless stay — reliable power backup, high-speed internet, on-site dining, and attentive service."
+        imageSrc="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=1920&q=85"
+        primaryCta={{label: "Book Now", href: "/contact"}}
       />
 
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
         <Reveal>
-          <h2 className="font-heading text-3xl">{tAmenities("introTitle")}</h2>
+          <h2 className="font-heading text-3xl">Full amenities at a glance</h2>
           <p className="mt-4 text-foreground/80 leading-relaxed">
-            {tAmenities("introBody")}
+            From complimentary high-speed Wi-Fi throughout the property to backup generator power, 24/7 front desk assistance, and secure parking — Senaf International Hotel ensures your comfort and convenience every moment of your stay.
           </p>
         </Reveal>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {amenities.map((a) => (
             <Reveal key={a.slug}>
-              <AmenityCard amenity={a} locale={locale} />
+              <AmenityCard amenity={a} />
             </Reveal>
           ))}
         </div>
@@ -51,7 +44,7 @@ export default async function AmenitiesPage({params}: {params: {locale: string}}
                   <div className="relative h-16 w-16 rounded-full overflow-hidden border border-foreground/10 bg-background/20 flex-shrink-0">
                     <Image
                       src={spotlight.image}
-                      alt={spotlight.title[locale]}
+                      alt={spotlight.title}
                       fill
                       sizes="64px"
                       className="object-cover"
@@ -62,24 +55,24 @@ export default async function AmenitiesPage({params}: {params: {locale: string}}
 
                   <div>
                     <h3 className="font-heading text-3xl md:text-4xl leading-tight">
-                      {spotlight.title[locale]}
+                      {spotlight.title}
                     </h3>
                     <p className="mt-4 text-foreground/85 leading-relaxed max-w-[520px]">
-                      {spotlight.description[locale]}
+                      {spotlight.description}
                     </p>
 
                     <div className="mt-7 flex flex-col sm:flex-row gap-3">
                       <Link
-                        href={`/${params.locale}/contact?purpose=amenities`}
+                        href="/contact?purpose=amenities"
                         className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-accent-foreground hover:brightness-110 transition"
                       >
-                        {tCommon("submitRequest")}
+                        Submit Request
                       </Link>
                       <Link
-                        href={`/${params.locale}/offers`}
+                        href="/offers"
                         className="inline-flex w-full sm:w-auto items-center justify-center rounded-full border border-white/15 bg-transparent px-7 py-3.5 text-sm font-semibold text-foreground/90 hover:bg-surface/40 transition"
                       >
-                        {tNav("offers")}
+                        Offers & Packages
                       </Link>
                     </div>
                   </div>
@@ -92,4 +85,3 @@ export default async function AmenitiesPage({params}: {params: {locale: string}}
     </PageLayout>
   );
 }
-
