@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_Ethiopic, Noto_Serif_Ethiopic } from "next/font/google";
 import "./globals.css";
+import ThemeProvider from "@/components/ThemeProvider";
 
 const bodyFont = Noto_Sans_Ethiopic({
   subsets: ["ethiopic"],
@@ -14,9 +15,9 @@ const headingFont = Noto_Serif_Ethiopic({
 });
 
 export const metadata: Metadata = {
-  title: "Milkomi Hotel",
+  title: "Senaf Int. Hotel",
   description:
-    "Milkomi Hotel — luxury rooms, amenities, dining, events, and packages.",
+    "Senaf Int. Hotel — luxury rooms, amenities, dining, events, and packages.",
 };
 
 export default function RootLayout({
@@ -28,9 +29,12 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${bodyFont.variable} ${headingFont.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

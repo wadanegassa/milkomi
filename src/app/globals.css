@@ -3,12 +3,22 @@
 @tailwind utilities;
 
 :root {
+  --background: #f8f6f2;
+  --foreground: #1a1410;
+  --muted: #6b655a;
+  --surface: #ede8e0;
+  --surface-2: #e2dbd0;
+  --accent: #b08d57;
+  --accent-foreground: #faf7f2;
+}
+
+.dark {
   --background: #0b0a09;
   --foreground: #f3efe8;
   --muted: #bdb2a2;
   --surface: #151210;
   --surface-2: #1d1713;
-  --accent: #b08d57; /* bronze/gold */
+  --accent: #b08d57;
   --accent-foreground: #100b06;
 }
 

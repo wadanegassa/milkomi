@@ -7,7 +7,7 @@ export default function NotFoundPage() {
         <p className="text-sm tracking-wide text-accent">404</p>
         <h1 className="mt-3 font-heading text-5xl">Page Not Found</h1>
         <p className="mt-4 text-foreground/75">
-          The page you requested is unavailable. Let’s get you back to Milkomi’s homepage.
+          The page you requested is unavailable. Let’s get you back to Senaf Int. Hotel’s homepage.
         </p>
         <div className="mt-8">
           <Link href="/en" className="inline-flex rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground">

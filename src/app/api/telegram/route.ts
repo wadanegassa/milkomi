@@ -29,7 +29,7 @@ export async function POST(req: Request) {
       .join("\n");
 
     const text = [
-      `Milkomi Website Lead`,
+      `Senaf Int. Hotel Website Lead`,
       `Type: ${type || "unknown"}`,
       `Locale: ${locale}`,
       "",
