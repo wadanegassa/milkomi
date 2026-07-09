@@ -3,58 +3,54 @@
 import Link from "next/link";
 import Image from "next/image";
 import {usePathname} from "next/navigation";
-import {useMemo, useState} from "react";
+import {useMemo, useState, useEffect} from "react";
 import {AnimatePresence, motion} from "framer-motion";
-import {Menu, X, Phone} from "lucide-react";
-import {useTranslations, useLocale} from "next-intl";
+import {Menu, X, Phone, Sun, Moon} from "lucide-react";
+import {useTheme} from "next-themes";
 
 import {navLinks} from "@/lib/nav";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
 
-const NAVBAR_HEIGHT_CLASS = "h-20"; // keep in sync with `Hero` top padding
+const NAVBAR_HEIGHT_CLASS = "h-20";
 
 function getPathWithoutLocale(pathname: string) {
-  const parts = pathname.split("/").filter(Boolean);
-  if (parts.length <= 1) return "/";
-  return "/" + parts.slice(1).join("/");
+  return pathname;
 }
 
 export default function Navbar() {
   const pathname = usePathname();
-  const locale = useLocale();
-  const t = useTranslations();
   const [open, setOpen] = useState(false);
+  const {theme, setTheme} = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   const currentPath = useMemo(() => getPathWithoutLocale(pathname), [pathname]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      {/* Top bar */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-2">
         <div className={`${NAVBAR_HEIGHT_CLASS} flex items-center justify-between`}>
-          {/* Logo pill */}
           <Link
-            href={`/${locale}`}
+            href="/"
             className="flex items-center gap-3 rounded-full border border-white/10 bg-background/70 px-3 py-2 backdrop-blur"
-            aria-label="Milkomi Home"
+            aria-label="Home"
           >
             <div className="relative h-9 w-9 rounded-full overflow-hidden bg-surface border border-foreground/10">
               <Image
                 src="/assets/images/logo/logo-light.svg"
-                alt="Milkomi Hotel logo"
+                alt=""
                 fill
                 priority
               />
             </div>
             <div className="hidden sm:block leading-tight">
               <p className="text-sm font-semibold tracking-[0.24em] uppercase">
-                Milkomi
+                Senaf
               </p>
-              <p className="text-xs text-foreground/70">Luxury Hotel</p>
+              <p className="text-xs text-foreground/70">Int. Hotel</p>
             </div>
           </Link>
 
-          {/* Desktop nav capsule */}
           <nav className="hidden md:flex flex-1 items-center justify-center">
             <div className="inline-flex items-center gap-1 rounded-full border border-white/15 bg-background/60 px-2 py-1 backdrop-blur">
               {navLinks.map((link) => {
@@ -62,7 +58,7 @@ export default function Navbar() {
                   currentPath === link.path ||
                   (link.path !== "/" && currentPath.startsWith(link.path));
 
-                const href = `/${locale}${link.path === "/" ? "" : link.path}`;
+                const href = link.path === "/" ? "/" : link.path;
 
                 return (
                   <Link
@@ -76,21 +72,27 @@ export default function Navbar() {
                         : "text-foreground/85 hover:bg-surface hover:text-foreground",
                     ].join(" ")}
                   >
-                    {t(link.labelKey)}
+                    {link.label}
                   </Link>
                 );
               })}
             </div>
           </nav>
 
-          {/* Right side */}
           <div className="flex items-center gap-2 md:gap-3">
-            <div className="hidden sm:block">
-              <LanguageSwitcher />
-            </div>
+            {mounted && (
+              <button
+                type="button"
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="rounded-full border border-white/15 bg-background/70 p-2 text-foreground/80 hover:bg-surface focus-visible:ring-2 focus-visible:ring-accent transition-colors"
+                aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+              >
+                {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              </button>
+            )}
 
             <a
-              href="tel:+251900000000"
+              href="tel:+25157661234"
               className="hidden md:inline-flex items-center gap-2 rounded-full border border-accent/40 bg-background/70 px-4 py-2 text-xs font-semibold text-accent-foreground shadow-sm hover:bg-accent hover:text-accent-foreground transition-colors"
             >
               <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-accent/90">
@@ -99,7 +101,6 @@ export default function Navbar() {
               <span>Call to book</span>
             </a>
 
-            {/* Mobile menu */}
             <button
               type="button"
               onClick={() => setOpen(true)}
@@ -112,7 +113,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Drawer */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -153,7 +153,7 @@ export default function Navbar() {
                     currentPath === link.path ||
                     (link.path !== "/" && currentPath.startsWith(link.path));
 
-                  const href = `/${locale}${link.path === "/" ? "" : link.path}`;
+                  const href = link.path === "/" ? "/" : link.path;
 
                   return (
                     <Link
@@ -167,16 +167,27 @@ export default function Navbar() {
                           : "text-foreground/90 hover:bg-surface",
                       ].join(" ")}
                     >
-                      {t(link.labelKey)}
+                      {link.label}
                     </Link>
                   );
                 })}
               </div>
 
               <div className="mt-6 flex items-center justify-between">
-                <LanguageSwitcher />
+                <div className="flex items-center gap-2">
+                  {mounted && (
+                    <button
+                      type="button"
+                      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                      className="rounded-full border border-white/15 bg-background/70 p-2 text-foreground/80 hover:bg-surface transition-colors"
+                      aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+                    >
+                      {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                    </button>
+                  )}
+                </div>
                 <a
-                  href="tel:+251900000000"
+                  href="tel:+25157661234"
                   className="inline-flex items-center gap-2 rounded-full border border-accent/50 bg-accent px-4 py-2 text-xs font-semibold text-accent-foreground shadow-sm"
                 >
                   <Phone className="h-3.5 w-3.5" />
@@ -190,4 +201,3 @@ export default function Navbar() {
     </header>
   );
 }
-

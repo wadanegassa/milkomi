@@ -6,11 +6,9 @@ import type {GalleryCategory, GalleryItem} from "@/data/gallery";
 
 export default function GalleryLightbox({
   items,
-  locale,
   labels,
 }: {
   items: GalleryItem[];
-  locale: "en" | "am" | "om";
   labels: Record<GalleryCategory, string>;
 }) {
   const [activeCategory, setActiveCategory] = useState<GalleryCategory | "all">("all");
@@ -62,10 +60,12 @@ export default function GalleryLightbox({
           >
             <Image
               src={item.image}
-              alt={item.alt[locale]}
+              alt={item.alt}
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover"
+              loading="lazy"
+              quality={85}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
           </button>
@@ -79,19 +79,21 @@ export default function GalleryLightbox({
               Close
             </button>
             <button onClick={showPrev} className="absolute left-6 rounded-full border border-white/30 text-white px-3 py-2">
-              ‹
+              &lsaquo;
             </button>
             <div className="relative h-[80vh] w-full max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-black/30">
               <Image
                 src={filtered[openIdx].image}
-                alt={filtered[openIdx].alt[locale]}
+                alt={filtered[openIdx].alt}
                 fill
+                priority
                 sizes="100vw"
                 className="object-cover"
+                quality={90}
               />
             </div>
             <button onClick={showNext} className="absolute right-6 rounded-full border border-white/30 text-white px-3 py-2">
-              ›
+              &rsaquo;
             </button>
           </div>
         </div>
@@ -99,4 +101,3 @@ export default function GalleryLightbox({
     </>
   );
 }
-

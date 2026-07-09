@@ -2,7 +2,6 @@
 
 import {useState} from "react";
 import {useForm} from "react-hook-form";
-import {useTranslations, useLocale} from "next-intl";
 
 type BookingValues = {
   name: string;
@@ -16,8 +15,6 @@ type BookingValues = {
 };
 
 export default function BookingForm({defaultRoom = ""}: {defaultRoom?: string}) {
-  const locale = useLocale();
-  const t = useTranslations("forms.booking");
   const [status, setStatus] = useState<"idle" | "submitting" | "sent" | "error">("idle");
 
   const {register, handleSubmit, formState: {errors}} = useForm<BookingValues>({
@@ -29,7 +26,7 @@ export default function BookingForm({defaultRoom = ""}: {defaultRoom?: string}) 
     try {
       const fd = new FormData();
       fd.append("type", "booking");
-      fd.append("locale", locale);
+      fd.append("locale", "en");
       Object.entries(values).forEach(([k, v]) => fd.append(k, v ?? ""));
       const res = await fetch("/api/telegram", {method: "POST", body: fd});
       if (!res.ok) throw new Error("Failed");
@@ -46,74 +43,74 @@ export default function BookingForm({defaultRoom = ""}: {defaultRoom?: string}) 
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="space-y-2">
-          <span className="text-sm font-semibold text-foreground/90">{t("name")}</span>
+          <span className="text-sm font-semibold text-foreground/90">Name</span>
           <input
             {...register("name", {required: true})}
-            className="w-full rounded-2xl border border-foreground/10 bg-white px-4 py-3.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-accent/70 placeholder:text-foreground/40"
+            className="w-full rounded-2xl border border-foreground/10 bg-surface px-4 py-3.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-accent/70 placeholder:text-foreground/40"
           />
           {errors.name && <span className="text-xs text-red-300">Required</span>}
         </label>
 
         <label className="space-y-2">
-          <span className="text-sm font-semibold text-foreground/90">{t("phone")}</span>
+          <span className="text-sm font-semibold text-foreground/90">Phone</span>
           <input
             {...register("phone", {required: true})}
-            className="w-full rounded-2xl border border-foreground/10 bg-white px-4 py-3.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-accent/70 placeholder:text-foreground/40"
+            className="w-full rounded-2xl border border-foreground/10 bg-surface px-4 py-3.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-accent/70 placeholder:text-foreground/40"
           />
           {errors.phone && <span className="text-xs text-red-300">Required</span>}
         </label>
 
         <label className="space-y-2 sm:col-span-2">
-          <span className="text-sm font-semibold text-foreground/90">{t("email")}</span>
+          <span className="text-sm font-semibold text-foreground/90">Email (optional)</span>
           <input
             {...register("email")}
-            className="w-full rounded-2xl border border-foreground/10 bg-white px-4 py-3.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-accent/70 placeholder:text-foreground/40"
+            className="w-full rounded-2xl border border-foreground/10 bg-surface px-4 py-3.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-accent/70 placeholder:text-foreground/40"
             placeholder="email@example.com"
           />
         </label>
 
         <label className="space-y-2">
-          <span className="text-sm font-semibold text-foreground/90">{t("checkIn")}</span>
+          <span className="text-sm font-semibold text-foreground/90">Check-in date</span>
           <input
             type="date"
             {...register("checkIn", {required: true})}
-            className="w-full rounded-2xl border border-foreground/10 bg-white px-4 py-3.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-accent/70"
+            className="w-full rounded-2xl border border-foreground/10 bg-surface px-4 py-3.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-accent/70"
           />
         </label>
 
         <label className="space-y-2">
-          <span className="text-sm font-semibold text-foreground/90">{t("checkOut")}</span>
+          <span className="text-sm font-semibold text-foreground/90">Check-out date</span>
           <input
             type="date"
             {...register("checkOut", {required: true})}
-            className="w-full rounded-2xl border border-foreground/10 bg-white px-4 py-3.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-accent/70"
+            className="w-full rounded-2xl border border-foreground/10 bg-surface px-4 py-3.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-accent/70"
           />
         </label>
 
         <label className="space-y-2">
-          <span className="text-sm font-semibold text-foreground/90">{t("roomType")}</span>
+          <span className="text-sm font-semibold text-foreground/90">Room type</span>
           <input
             {...register("roomType", {required: true})}
-            className="w-full rounded-2xl border border-foreground/10 bg-white px-4 py-3.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-accent/70 placeholder:text-foreground/40"
+            className="w-full rounded-2xl border border-foreground/10 bg-surface px-4 py-3.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-accent/70 placeholder:text-foreground/40"
             placeholder="e.g. Standard Room"
           />
         </label>
 
         <label className="space-y-2">
-          <span className="text-sm font-semibold text-foreground/90">{t("guests")}</span>
+          <span className="text-sm font-semibold text-foreground/90">Number of guests</span>
           <input
             {...register("guests", {required: true})}
-            className="w-full rounded-2xl border border-foreground/10 bg-white px-4 py-3.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-accent/70 placeholder:text-foreground/40"
+            className="w-full rounded-2xl border border-foreground/10 bg-surface px-4 py-3.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-accent/70 placeholder:text-foreground/40"
             placeholder="2"
           />
         </label>
 
         <label className="space-y-2 sm:col-span-2">
-          <span className="text-sm font-semibold text-foreground/90">{t("message")}</span>
+          <span className="text-sm font-semibold text-foreground/90">Message</span>
           <textarea
             rows={5}
             {...register("message", {required: true})}
-            className="w-full resize-y rounded-2xl border border-foreground/10 bg-white px-4 py-3.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-accent/70 placeholder:text-foreground/40"
+            className="w-full resize-y rounded-2xl border border-foreground/10 bg-surface px-4 py-3.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-accent/70 placeholder:text-foreground/40"
             placeholder="Share any special requests..."
           />
         </label>
@@ -126,7 +123,7 @@ export default function BookingForm({defaultRoom = ""}: {defaultRoom?: string}) 
           disabled={status === "submitting"}
           className="rounded-full bg-accent px-7 py-3 text-sm font-semibold text-accent-foreground disabled:opacity-70 hover:brightness-110 transition"
         >
-          {status === "submitting" ? "Sending..." : t("submit")}
+          {status === "submitting" ? "Sending..." : "Submit booking request"}
         </button>
       </div>
 
@@ -139,4 +136,3 @@ export default function BookingForm({defaultRoom = ""}: {defaultRoom?: string}) 
     </form>
   );
 }
-

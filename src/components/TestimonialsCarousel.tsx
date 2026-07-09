@@ -31,10 +31,8 @@ function Stars({rating}: {rating: number}) {
 
 export default function TestimonialsCarousel({
   testimonials,
-  locale,
 }: {
   testimonials: Testimonial[];
-  locale: "en" | "am" | "om";
 }) {
   const reduceMotion = useReducedMotion();
   const [index, setIndex] = useState(0);
@@ -59,11 +57,11 @@ export default function TestimonialsCarousel({
         <div className="min-w-0">
           <Stars rating={active?.ratingOutOf5 ?? 5} />
           <p className="mt-4 text-sm text-foreground/80 line-clamp-5">
-            {active.quote[locale]}
+            {active.quote}
           </p>
           <p className="mt-4 text-sm font-semibold">
             {active.name}
-            {active.location ? <span className="text-foreground/60"> · {active.location}</span> : null}
+            {active.location ? <span className="text-foreground/60"> &middot; {active.location}</span> : null}
           </p>
         </div>
 
@@ -74,7 +72,7 @@ export default function TestimonialsCarousel({
             className="rounded-full border border-foreground/15 w-10 h-10 flex items-center justify-center hover:bg-surface"
             aria-label="Previous testimonial"
           >
-            ‹
+            &lsaquo;
           </button>
           <button
             type="button"
@@ -82,12 +80,11 @@ export default function TestimonialsCarousel({
             className="rounded-full border border-foreground/15 w-10 h-10 flex items-center justify-center hover:bg-surface"
             aria-label="Next testimonial"
           >
-            ›
+            &rsaquo;
           </button>
         </div>
       </div>
 
-      {/* Mobile controls */}
       {testimonials.length > 1 && (
         <div className="mt-4 flex items-center justify-between gap-3 sm:hidden">
           <button
@@ -126,7 +123,6 @@ export default function TestimonialsCarousel({
         })}
       </div>
 
-      {/* subtle motion: change background on index */}
       <AnimatePresence mode="wait">
         {active && (
           <motion.div
@@ -142,4 +138,3 @@ export default function TestimonialsCarousel({
     </div>
   );
 }
-

@@ -1,11 +1,7 @@
 import Link from "next/link";
-import {getTranslations} from "next-intl/server";
 
 export default async function FloatingChat() {
-  const t = await getTranslations("common");
-
-  // Replace with your real Telegram/WhatsApp links.
-  const telegramHref = "https://t.me/milkomi_hotel";
+  const telegramHref = "https://t.me/senaf_int_hotel";
 
   return (
     <div className="fixed bottom-5 right-4 z-50">
@@ -14,11 +10,10 @@ export default async function FloatingChat() {
         target="_blank"
         rel="noopener noreferrer"
         className="rounded-full bg-accent px-4 py-3 text-sm font-semibold text-accent-foreground shadow-lg hover:brightness-110 focus-visible:ring-2 ring-accent"
-        aria-label={t("chatToBook")}
+        aria-label="Chat with us on Telegram to book"
       >
-        {t("chatToBook")}
+        Chat to book
       </Link>
     </div>
   );
 }
-
