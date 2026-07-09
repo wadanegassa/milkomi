@@ -56,7 +56,7 @@ export default async function EventsPage() {
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-foreground/10 bg-surface/20">
                 <Image
                   src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=85"
-                  alt="Mersimoy International Hotel events hall"
+                  alt="Milkomi Hotel events hall"
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
                   className="object-cover"

@@ -45,7 +45,7 @@ export default function Navbar() {
             </div>
             <div className="hidden sm:block leading-tight">
               <p className="text-sm font-semibold tracking-[0.24em] uppercase">
-                Mersimoy
+                Milkomi
               </p>
               <p className="text-xs text-foreground/70">Int. Hotel</p>
             </div>

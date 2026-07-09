@@ -17,7 +17,7 @@ export const galleryItems: GalleryItem[] = [
     id: "g1",
     category: "exterior",
     image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=85",
-    alt: "Mersimoy International Hotel exterior facade"
+    alt: "Milkomi Hotel exterior facade"
   },
   {
     id: "g2",
@@ -47,7 +47,7 @@ export const galleryItems: GalleryItem[] = [
     id: "g6",
     category: "exterior",
     image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=85",
-    alt: "Mersimoy International Hotel exterior facade"
+    alt: "Milkomi Hotel exterior facade"
   },
   {
     id: "g7",

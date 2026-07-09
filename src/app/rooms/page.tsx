@@ -28,7 +28,7 @@ export default async function RoomsPage() {
             <div className="md:col-span-7">
               <h2 className="font-heading text-3xl">Explore your stay</h2>
               <p className="mt-4 text-foreground/80 leading-relaxed">
-                Each room at Mersimoy International Hotel is thoughtfully furnished with your comfort in mind. Choose from our range of rooms and suites — all featuring en-suite bathrooms, reliable Wi-Fi, and dedicated workspace areas.
+                Each room at Milkomi Hotel is thoughtfully furnished with your comfort in mind. Choose from our range of rooms and suites — all featuring en-suite bathrooms, reliable Wi-Fi, and dedicated workspace areas.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Link

@@ -20,7 +20,7 @@ export default function Footer() {
                 />
               </div>
               <div>
-                <p className="text-sm font-semibold">Mersimoy</p>
+                <p className="text-sm font-semibold">Milkomi</p>
                 <p className="text-xs text-foreground/70">Int. Hotel</p>
               </div>
             </div>
@@ -36,8 +36,8 @@ export default function Footer() {
               </p>
               <p>
                 <span className="text-foreground/60">Email:</span>{" "}
-                <a className="underline" href="mailto:info@mersimoyhotel.com">
-                  info@mersimoyhotel.com
+                <a className="underline" href="mailto:info@milkomihotel.com">
+                  info@milkomihotel.com
                 </a>
               </p>
             </div>
@@ -92,7 +92,7 @@ export default function Footer() {
 
         <div className="mt-10 flex flex-col gap-3 border-t border-foreground/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-foreground/70">
-            &copy; {year} Mersimoy International Hotel. All rights reserved.
+            &copy; {year} Milkomi Hotel. All rights reserved.
           </p>
           <p className="text-xs text-foreground/60">Website by Pro</p>
         </div>

@@ -15,9 +15,9 @@ const headingFont = Noto_Serif_Ethiopic({
 });
 
 export const metadata: Metadata = {
-  title: "Mersimoy International Hotel",
+  title: "Milkomi Hotel",
   description:
-    "Mersimoy International Hotel — luxury rooms, amenities, dining, events, and packages.",
+    "Milkomi Hotel — luxury rooms, amenities, dining, events, and packages.",
 };
 
 export default function RootLayout({
