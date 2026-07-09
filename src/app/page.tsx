@@ -33,7 +33,7 @@ export default async function HomePage() {
   return (
     <PageLayout>
       <Hero
-        title="Senaf Int. Hotel"
+        title="Mersimoy International Hotel"
         tagline="Experience the warmth of Oromia at Nekemte's finest hotel — where modern comfort meets genuine Ethiopian hospitality."
         images={[
           "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&q=85",
@@ -52,9 +52,9 @@ export default async function HomePage() {
           <Reveal>
             <div className="grid gap-10 md:grid-cols-12 items-center">
               <div className="md:col-span-7">
-                <h2 className="font-heading text-3xl">Welcome to Senaf Int. Hotel</h2>
+                <h2 className="font-heading text-3xl">Welcome to Mersimoy International Hotel</h2>
                 <p className="mt-4 text-foreground/80 leading-relaxed">
-                  Nestled in the heart of Nekemte, East Welega, Senaf International Hotel offers a perfect blend of contemporary elegance and authentic Oromo hospitality. Whether you are visiting for business or leisure, every detail of your stay is crafted to make you feel at home.
+                  Nestled in the heart of Nekemte, East Welega, Mersimoy International Hotel offers a perfect blend of contemporary elegance and authentic Oromo hospitality. Whether you are visiting for business or leisure, every detail of your stay is crafted to make you feel at home.
                 </p>
                 <div className="mt-8">
                   <Link
@@ -69,7 +69,7 @@ export default async function HomePage() {
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-foreground/10 bg-surface/20">
                   <Image
                     src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=800&q=85"
-                    alt="Senaf Int. Hotel interior"
+                    alt="Mersimoy International Hotel interior"
                     fill
                     sizes="(max-width: 768px) 100vw, 40vw"
                     className="object-cover"
@@ -147,7 +147,7 @@ export default async function HomePage() {
                 <div className="relative aspect-[4/3]">
                   <Image
                     src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=85"
-                    alt="Senaf Int. Hotel events and conference hall"
+                    alt="Mersimoy International Hotel events and conference hall"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
@@ -178,7 +178,7 @@ export default async function HomePage() {
                 <div className="relative aspect-[4/3]">
                   <Image
                     src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=85"
-                    alt="Senaf Int. Hotel restaurant and dining"
+                    alt="Mersimoy International Hotel restaurant and dining"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
@@ -213,7 +213,7 @@ export default async function HomePage() {
               <div>
                 <h2 className="font-heading text-3xl">Guest Reviews</h2>
                 <p className="mt-3 text-sm text-foreground/70">
-                  Hear what our guests say about their experience at Senaf International Hotel.
+                  Hear what our guests say about their experience at Mersimoy International Hotel.
                 </p>
               </div>
             </div>
@@ -230,7 +230,7 @@ export default async function HomePage() {
               <div>
                 <h2 className="font-heading text-3xl">Gallery Preview</h2>
                 <p className="mt-3 text-sm text-foreground/70">
-                  Browse photos of our rooms, restaurant, event spaces, and the welcoming ambiance of Senaf International Hotel.
+                  Browse photos of our rooms, restaurant, event spaces, and the welcoming ambiance of Mersimoy International Hotel.
                 </p>
               </div>
               <Link
@@ -308,7 +308,7 @@ export default async function HomePage() {
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(176,141,87,0.35),transparent_55%),radial-gradient(circle_at_80%_10%,rgba(176,141,87,0.25),transparent_50%)]" />
               <div className="relative p-8 md:p-10 grid gap-6 md:grid-cols-12 items-center">
                 <div className="md:col-span-7">
-                  <h2 className="font-heading text-3xl">Ready to experience Senaf Int. Hotel?</h2>
+                  <h2 className="font-heading text-3xl">Ready to experience Mersimoy International Hotel?</h2>
                   <p className="mt-4 text-foreground/80 leading-relaxed">
                     Contact us today to reserve your room or plan your event. We look forward to welcoming you to Nekemte.
                   </p>

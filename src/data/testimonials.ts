@@ -12,7 +12,7 @@ export const testimonials: Testimonial[] = [
     name: "Aster M.",
     location: "Addis Ababa",
     ratingOutOf5: 5,
-    quote: "Everything felt premium — quiet rooms, attentive staff, and meals that made my mornings special. I will definitely return to Senaf on my next trip to Nekemte."
+    quote: "Everything felt premium — quiet rooms, attentive staff, and meals that made my mornings special. I will definitely return to Mersimoy on my next trip to Nekemte."
   },
   {
     id: "t2",

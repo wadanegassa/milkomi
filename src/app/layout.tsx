@@ -15,9 +15,9 @@ const headingFont = Noto_Serif_Ethiopic({
 });
 
 export const metadata: Metadata = {
-  title: "Senaf Int. Hotel",
+  title: "Mersimoy International Hotel",
   description:
-    "Senaf Int. Hotel — luxury rooms, amenities, dining, events, and packages.",
+    "Mersimoy International Hotel — luxury rooms, amenities, dining, events, and packages.",
 };
 
 export default function RootLayout({

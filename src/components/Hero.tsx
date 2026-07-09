@@ -76,7 +76,7 @@ export default function Hero({
           <div className="max-w-2xl">
             <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs text-white/90 backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
-              Senaf Int. Hotel
+              Mersimoy International Hotel
             </p>
             <h1 className="mt-4 font-heading text-4xl sm:text-6xl leading-[1.02] tracking-tight text-white">
               {title}

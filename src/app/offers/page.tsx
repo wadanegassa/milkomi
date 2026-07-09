@@ -7,7 +7,7 @@ import {offers} from "@/data/offers";
 export default async function OffersPage() {
   return (
     <PageLayout>
-      <Hero title="Offers & Packages" tagline="Exclusive rates and curated packages designed to make your stay at Senaf International Hotel even more memorable." imageSrc="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1920&q=85" />
+      <Hero title="Offers & Packages" tagline="Exclusive rates and curated packages designed to make your stay at Mersimoy International Hotel even more memorable." imageSrc="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1920&q=85" />
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid gap-6 md:grid-cols-3">
           {offers.map((offer) => (

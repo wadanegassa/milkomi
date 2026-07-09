@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default async function FloatingChat() {
-  const telegramHref = "https://t.me/senaf_int_hotel";
+  const telegramHref = "https://t.me/mersimoy_int_hotel";
 
   return (
     <div className="fixed bottom-5 right-4 z-50">

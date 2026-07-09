@@ -23,7 +23,7 @@ export default async function AmenitiesPage() {
         <Reveal>
           <h2 className="font-heading text-3xl">Full amenities at a glance</h2>
           <p className="mt-4 text-foreground/80 leading-relaxed">
-            From complimentary high-speed Wi-Fi throughout the property to backup generator power, 24/7 front desk assistance, and secure parking — Senaf International Hotel ensures your comfort and convenience every moment of your stay.
+            From complimentary high-speed Wi-Fi throughout the property to backup generator power, 24/7 front desk assistance, and secure parking — Mersimoy International Hotel ensures your comfort and convenience every moment of your stay.
           </p>
         </Reveal>
 

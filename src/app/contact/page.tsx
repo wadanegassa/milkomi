@@ -28,7 +28,7 @@ export default async function ContactPage({
               <h2 className="font-heading text-3xl">Contact details</h2>
               <div className="mt-5 space-y-3 text-sm text-foreground/80">
                 <p>Phone: <a href="tel:+25157661234" className="underline">+251 57 661 1234</a></p>
-                <p>Email: <a href="mailto:info@senafhotel.com" className="underline">info@senafhotel.com</a></p>
+                <p>Email: <a href="mailto:info@mersimoyhotel.com" className="underline">info@mersimoyhotel.com</a></p>
                 <p>Address: Gidaa Kormaa, Nekemte, East Welega, Oromia, Ethiopia</p>
               </div>
               <div className="mt-6 h-64 overflow-hidden rounded-2xl border border-foreground/10">
