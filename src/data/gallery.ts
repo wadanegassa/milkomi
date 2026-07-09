@@ -1,5 +1,3 @@
-import type {Translations} from "./rooms";
-
 export type GalleryCategory =
   | "exterior"
   | "rooms"
@@ -11,89 +9,56 @@ export type GalleryItem = {
   id: string;
   category: GalleryCategory;
   image: string;
-  alt: Translations;
+  alt: string;
 };
 
 export const galleryItems: GalleryItem[] = [
   {
     id: "g1",
     category: "exterior",
-    image: "/assets/images/gallery/exterior/exterior-1.jpg",
-    alt: {
-      en: "Placeholder exterior photo",
-      am: "ቅድመ-ሙከራ የውጭ ፎቶ",
-      om: "Placeholder suuraa alaa"
-    }
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=85",
+    alt: "Senaf Int. Hotel exterior facade"
   },
   {
     id: "g2",
     category: "rooms",
-    image: "/assets/images/gallery/rooms/rooms-1.jpg",
-    alt: {
-      en: "Placeholder room photo",
-      am: "ቅድመ-ሙከራ የክፍል ፎቶ",
-      om: "Placeholder suuraa qola"
-    }
+    image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=85",
+    alt: "Executive suite interior"
   },
   {
     id: "g3",
     category: "restaurant",
-    image: "/assets/images/gallery/restaurant/restaurant-1.jpg",
-    alt: {
-      en: "Placeholder restaurant ambiance",
-      am: "ቅድመ-ሙከራ የምግብ ቤት አካባቢ",
-      om: "Placeholder mooda mana nyaataa"
-    }
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=85",
+    alt: "Restaurant dining area"
   },
   {
     id: "g4",
     category: "events",
-    image: "/assets/images/gallery/events/events-1.jpg",
-    alt: {
-      en: "Placeholder event setup",
-      am: "ቅድመ-ሙከራ የዝግጅት ውድቀት",
-      om: "Placeholder qindaa'insa sagantaa"
-    }
+    image: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=800&q=85",
+    alt: "Events hall setup"
   },
   {
     id: "g5",
     category: "amenities",
-    image: "/assets/images/gallery/amenities/amenities-1.jpg",
-    alt: {
-      en: "Placeholder amenity photo",
-      am: "ቅድመ-ሙከራ የአገልግሎት ፎቶ",
-      om: "Placeholder suuraa tajaajila"
-    }
+    image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=85",
+    alt: "Hotel lounge and reception"
   },
   {
     id: "g6",
     category: "exterior",
-    image: "/assets/images/hero/home-hero.jpg",
-    alt: {
-      en: "Placeholder exterior photo",
-      am: "ቅድመ-ሙከራ የውጭ ፎቶ",
-      om: "Placeholder suuraa alaa"
-    }
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=85",
+    alt: "Senaf Int. Hotel exterior facade"
   },
   {
     id: "g7",
     category: "rooms",
-    image: "/assets/images/rooms/deluxe-room.jpg",
-    alt: {
-      en: "Placeholder room photo",
-      am: "ቅድመ-ሙከራ የክፍል ፎቶ",
-      om: "Placeholder suuraa qola"
-    }
+    image: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=85",
+    alt: "Executive suite interior"
   },
   {
     id: "g8",
     category: "restaurant",
-    image: "/assets/images/dining/dining-main.jpg",
-    alt: {
-      en: "Placeholder restaurant ambiance",
-      am: "ቅድመ-ሙከራ የምግብ ቤት አካባቢ",
-      om: "Placeholder mooda mana nyaataa"
-    }
+    image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=85",
+    alt: "Restaurant dining area"
   }
 ];
-

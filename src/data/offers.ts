@@ -1,67 +1,35 @@
-import type {Translations} from "./rooms";
-
 export type Offer = {
   slug: string;
-  title: Translations;
-  description: Translations;
+  title: string;
+  description: string;
   priceFromUSD: number;
   image: string;
-  terms: Translations;
+  terms: string;
 };
 
 export const offers: Offer[] = [
   {
     slug: "seasonal-deal",
-    title: {
-      en: "Seasonal Deal",
-      am: "የወቅት ቅናሽ",
-      om: "Badii Yeroo"
-    },
-    description: {
-      en: "Placeholder copy: Exclusive seasonal rates with breakfast and priority check-in.",
-      am: "ቅድመ-ሙከራ ጽሑፍ፡ ልዩ የወቅት ዋጋ ከቁርስ እና ቅድሚያ ማስገባት ጋር።",
-      om: "Placeholder copy: Gatii yeroon addaa kan quraanaa fi check-in saffisaa dabalatee."
-    },
+    title: "Seasonal Deal",
+    description: "Enjoy exclusive seasonal rates including complimentary breakfast, priority check-in, and late checkout — the best value for your stay in Nekemte.",
     priceFromUSD: 110,
-    image: "/assets/images/offers/offers-main.jpg",
-    terms: {
-      en: "Placeholder copy: Subject to availability. Limited rooms per day.",
-      am: "ቅድመ-ሙከራ ጽሑፍ፡ ተገኝነት ላይ ይመሰርታል። በቀን የተወሰኑ ክፍሎች።",
-      om: "Placeholder copy: Filannoo irratti hundaa'a. Qolaa muraasa guyyaa keessatti."
-    }
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=85",
+    terms: "Subject to availability. Limited rooms per day at this rate. Advance booking is strongly recommended."
   },
   {
     slug: "honeymoon",
-    title: {en: "Honeymoon Package", am: "የጉብኝት ጥቅል", om: "Pakeejii Hima"
-    },
-    description: {
-      en: "Placeholder copy: A romantic stay with curated dining and in-room surprises.",
-      am: "ቅድመ-ሙከራ ጽሑፍ፡ የፍቅር ቆይታ ከተመረጠ መመገቢያ እና የክፍል ውስጥ ስጦታዎች ጋር።",
-      om: "Placeholder copy: Tajaajila jaalala—mana nyaataa filatamaa fi wantoota gara qofa keessatti yaadame."
-    },
+    title: "Honeymoon Package",
+    description: "A romantic escape in Nekemte — includes a candle-lit dinner at our restaurant, a fruit platter on arrival, and a late checkout for a relaxed morning.",
     priceFromUSD: 180,
-    image: "/assets/images/offers/offers-main.jpg",
-    terms: {
-      en: "Placeholder copy: Available for couples. Setup included for first night.",
-      am: "ቅድመ-ሙከራ ጽሑፍ፡ ለጥንዶች ይገኛል። ለመጀመሪያ ማታ ዝግጅት ተካቷል።",
-      om: "Placeholder copy: Fayyadamaa lamaaf. Qopheessaan yeroo jalqabaaf dabalame."
-    }
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=85",
+    terms: "Available for couples. Romantic setup, flowers, and sparkling drinks included for the first night of your stay."
   },
   {
     slug: "corporate-rate",
-    title: {en: "Corporate Rate", am: "የኮርፖሬት ዋጋ", om: "Gatii Koorpooreetii"},
-    description: {
-      en: "Placeholder copy: Ideal for business travelers with flexible invoicing options.",
-      am: "ቅድመ-ሙከራ ጽሑፍ፡ ለንግድ ጉዞ ምቹ—ተጣጣሚ የሂሳብ አማራጮች ጋር።",
-      om: "Placeholder copy: Daldalaa irratti mijataa—falmaa kaffaltii saffisaa fi mijataa ta'ee."
-    },
+    title: "Corporate Rate",
+    description: "Designed for business travelers — enjoy dedicated workspaces, reliable high-speed Wi-Fi, and flexible invoicing for your company.",
     priceFromUSD: 125,
-    image: "/assets/images/offers/offers-main.jpg",
-    terms: {
-      en: "Placeholder copy: Company approval required for invoicing.",
-      am: "ቅድመ-ሙከራ ጽሑፍ፡ ለሂሳብ ማፅደቅ ኩባንያ ያስፈልጋል።",
-      om: "Placeholder copy: Piroojeektii fi akkaataa invoicing irratti murteessuu."
-    }
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=85",
+    terms: "Company purchase order or approval letter required for invoicing. Please contact us in advance to arrange corporate billing."
   }
 ];
-

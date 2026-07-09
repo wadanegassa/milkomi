@@ -1,161 +1,130 @@
-export type Translations = {
-  en: string;
-  am: string;
-  om: string;
-};
-
 export type RoomType = {
   slug: string;
-  name: Translations;
-  description: Translations;
+  name: string;
+  description: string;
   capacity: number;
-  keyAmenities: {iconKey: string; text: Translations}[];
+  keyAmenities: {iconKey: string; text: string}[];
   startingPriceUSD: number;
   coverImage: string;
   galleryImages: string[];
-  allAmenities: Translations[];
+  allAmenities: string[];
 };
 
 export const rooms: RoomType[] = [
   {
     slug: "standard-room",
-    name: {
-      en: "Standard Room",
-      am: "መደበኛ ክፍል",
-      om: "Qolaa Filannoo Duraa",
-    },
-    description: {
-      en: "Placeholder copy: A calm, beautifully appointed room with everything you need for a comfortable stay.",
-      am: "ቅድመ-ሙከራ ጽሑፍ፡ ለምቾት ቆይታ የሚያስፈልጉት ሁሉ የተሟላ የሆነ እርጋታ ክፍል።",
-      om: "Placeholder copy: Qolaa miidhagaa fi deggarsa barbaachisaa hunda qabu siif qopheesse."
-    },
+    name: "Standard Room",
+    description: "A calm, beautifully appointed room with a comfortable bed, en-suite bathroom, and workspace — ideal for business or leisure travelers.",
     capacity: 2,
     keyAmenities: [
-      {iconKey: "wifi", text: {en: "Free Wi‑Fi", am: "ነፃ Wi‑Fi", om: "Wi‑Fi bilisaa"}},
-      {iconKey: "breakfast", text: {en: "Breakfast Options", am: "የቁርስ አማራጮች", om: "Filannoo Quraanaa"}},
-      {iconKey: "parking", text: {en: "On-site Parking", am: "በቦታው መኪና ማቆሚያ", om: "Qixa Diideessuu bakka keessa jiru"}}
+      {iconKey: "wifi", text: "Free Wi‑Fi"},
+      {iconKey: "breakfast", text: "Breakfast Options"},
+      {iconKey: "parking", text: "On-site Parking"}
     ],
     startingPriceUSD: 95,
-    coverImage: "/assets/images/rooms/standard-room.jpg",
+    coverImage: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&q=85",
     galleryImages: [
-      "/assets/images/rooms/standard-room.jpg",
-      "/assets/images/rooms/deluxe-room.jpg",
-      "/assets/images/hero/secondary-hero.jpg"
+      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&q=85",
+      "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=85",
+      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=85"
     ],
     allAmenities: [
-      {en: "AC & climate control", am: "AC እና የሙቀት ቁጥጥር", om: "AC fi sirreeffama qilleensaa"},
-      {en: "Work desk & smart lighting", am: "የስራ ጠረጴዛ እና ብርሃን", om: "Meeshaalee hojii & ifa sirrii"},
-      {en: "Private bathroom", am: "ግል መታጠቢያ", om: "Bakka quubsaa dhuunfaa"},
-      {en: "Nightly turndown service", am: "የማታ ዝግጅት አገልግሎት", om: "Tajaajila yeroo halkan"}
+      "AC & climate control",
+      "Work desk & smart lighting",
+      "Private bathroom",
+      "Nightly turndown service"
     ]
   },
   {
     slug: "deluxe-room",
-    name: {en: "Deluxe Room", am: "ዲሉክስ ክፍል", om: "Qolaa Deeluxe"},
-    description: {
-      en: "Placeholder copy: Spacious comfort with refined details and a relaxing view.",
-      am: "ቅድመ-ሙከራ ጽሑፍ፡ የተሰፋ ምቾት ከተሟላ ዝርዝር ጋር—ለማረፍ ጥሩ እይታ።",
-      om: "Placeholder copy: Gamtaan bal’inaan miidhaginaa fi ilaacha eeggannoo qabu qaba."
-    },
+    name: "Deluxe Room",
+    description: "Spacious and refined — enjoy added square footage, premium linens, and a relaxing city or garden view during your stay.",
     capacity: 3,
     keyAmenities: [
-      {iconKey: "wifi", text: {en: "Fast Wi‑Fi", am: "ፈጣን Wi‑Fi", om: "Wi‑Fi dandeetti guddaa"}},
-      {iconKey: "roomService", text: {en: "Room Service", am: "በክፍል አገልግሎት", om: "Tajaajila qofa keessa"}},
-      {iconKey: "parking", text: {en: "Secure Parking", am: "ደህንነት ያለው ማቆሚያ", om: "Bakka nagaa deeggarsa park"}}
+      {iconKey: "wifi", text: "Fast Wi‑Fi"},
+      {iconKey: "roomService", text: "Room Service"},
+      {iconKey: "parking", text: "Secure Parking"}
     ],
     startingPriceUSD: 120,
-    coverImage: "/assets/images/rooms/deluxe-room.jpg",
+    coverImage: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=85",
     galleryImages: [
-      "/assets/images/rooms/deluxe-room.jpg",
-      "/assets/images/rooms/standard-room.jpg",
-      "/assets/images/hero/home-hero.jpg"
+      "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=85",
+      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&q=85",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=85"
     ],
     allAmenities: [
-      {en: "Luxury linens", am: "የቅንጦት አልጋ ሽፋን", om: "Dafqee ulfaatina qabu"},
-      {en: "Premium bedding & pillow selection", am: "ጥሩ አልጋ እና ትራስ ምርጫ", om: "Ulfaataa fi filannoo xiqaa"},
-      {en: "Sound-insulated comfort", am: "የድምፅ መከላከያ", om: "Tishoo hin seenne of eeggannoo"}
+      "Luxury linens",
+      "Premium bedding & pillow selection",
+      "Sound-insulated comfort"
     ]
   },
   {
     slug: "junior-suite",
-    name: {en: "Junior Suite", am: "ጁኒየር ሱይት", om: "Junior Suite"},
-    description: {
-      en: "Placeholder copy: A separate lounge area with enhanced comfort for longer stays.",
-      am: "ቅድመ-ሙከራ ጽሑፍ፡ ለረዥም ቆይታ የተሻለ ምቾት—ተለያይ የቁጥጥር ክፍል ጋር።",
-      om: "Placeholder copy: Kutaa boqonnaa adda addaa—waggoota dheeraa qopheesse."
-    },
+    name: "Junior Suite",
+    description: "A separate lounge area with enhanced comfort — perfect for extended stays, featuring additional seating, a work desk, and upgraded amenities.",
     capacity: 3,
     keyAmenities: [
-      {iconKey: "lounge", text: {en: "Separate Lounge", am: "ተለያይ ማዕከል", om: "Kutaa Boqonnaa Adda"} },
-      {iconKey: "wifi", text: {en: "Reliable Wi‑Fi", am: "ተመናጭ Wi‑Fi", om: "Wi‑Fi amanamaa"}},
-      {iconKey: "breakfast", text: {en: "Included Breakfast", am: "የቁርስ ጥቅል ያለበት", om: "Quraanaa dabalamee"}}
+      {iconKey: "lounge", text: "Separate Lounge"},
+      {iconKey: "wifi", text: "Reliable Wi‑Fi"},
+      {iconKey: "breakfast", text: "Included Breakfast"}
     ],
     startingPriceUSD: 165,
-    coverImage: "/assets/images/hero/secondary-hero.jpg",
+    coverImage: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=85",
     galleryImages: [
-      "/assets/images/hero/secondary-hero.jpg",
-      "/assets/images/rooms/deluxe-room.jpg",
-      "/assets/images/about/about-main.jpg"
+      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=85",
+      "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=85",
+      "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=800&q=85"
     ],
     allAmenities: [
-      {en: "Lounge seating & workspace", am: "የመቀመጫ ቦታ እና የስራ ቦታ", om: "Kuta tursiisee fi hojii"},
-      {en: "Premium bathroom amenities", am: "የቅንጦት የመታጠቢያ አገልግሎት", om: "Tajaajila vaayibaa premium"},
-      {en: "Evening turndown", am: "የማታ ዝግጅት", om: "Qopheessa halkan"}
+      "Lounge seating & workspace",
+      "Premium bathroom amenities",
+      "Evening turndown"
     ]
   },
   {
     slug: "executive-suite",
-    name: {en: "Executive Suite", am: "ኤክስኪውቲቭ ሱይት", om: "Executive Suite"},
-    description: {
-      en: "Placeholder copy: Elevated luxury with a distinct living experience and premium finishing.",
-      am: "ቅድመ-ሙከራ ጽሑፍ፡ የተሻለ የቅንጦት ልምድ—በምርጥ ዝግጅት እና ተለያይ ኑሮ።",
-      om: "Placeholder copy: Ulfaataa ol’aanaa—haala jiraachuu adda ta’e."
-    },
+    name: "Executive Suite",
+    description: "Our finest accommodation — a distinct living experience with premium furnishings, a spacious bathroom, and executive-level comforts throughout.",
     capacity: 4,
     keyAmenities: [
-      {iconKey: "lounge", text: {en: "Executive Lounge", am: "ኤክስኪውቲቭ ማዕከል", om: "Lounge Executive"}},
-      {iconKey: "wifi", text: {en: "High-speed Wi‑Fi", am: "ፈጣን Wi‑Fi", om: "Wi‑Fi saffisaa"}},
-      {iconKey: "breakfast", text: {en: "Breakfast Included", am: "ቁርስ ተካትቷል", om: "Quraanaa dabalamee"}}
+      {iconKey: "lounge", text: "Executive Lounge"},
+      {iconKey: "wifi", text: "High-speed Wi‑Fi"},
+      {iconKey: "breakfast", text: "Breakfast Included"}
     ],
     startingPriceUSD: 230,
-    coverImage: "/assets/images/about/about-main.jpg",
+    coverImage: "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=800&q=85",
     galleryImages: [
-      "/assets/images/about/about-main.jpg",
-      "/assets/images/rooms/standard-room.jpg",
-      "/assets/images/hero/home-hero.jpg"
+      "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=800&q=85",
+      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&q=85",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=85"
     ],
     allAmenities: [
-      {en: "Dining area for meetings", am: "ለስብሰባ የምግብ ቦታ", om: "Akkataa nyaataa mariif"},
-      {en: "Curated minibar selection", am: "የተመረጠ ሚኒባር", om: "Minibar filannoo qopheessine"},
-      {en: "Premium bath experience", am: "የቅንጦት መታጠቢያ ልምድ", om: "Gaafata quubsaa premium"}
+      "Dining area for meetings",
+      "Curated minibar selection",
+      "Premium bath experience"
     ]
   },
   {
     slug: "family-suite",
-    name: {en: "Family Suite", am: "የቤተሰብ ሱይት", om: "Family Suite"},
-    description: {
-      en: "Placeholder copy: Comfort for the whole family, with flexible space and thoughtful amenities.",
-      am: "ቅድመ-ሙከራ ጽሑፍ፡ ለቤተሰብ ሁሉ ምቾት—ተለዋዋጭ ቦታ እና አሳቢ አገልግሎት።",
-      om: "Placeholder copy: Maaloo qooqaa—bakka mijataa fi tajaajila beekamaa qaba."
-    },
+    name: "Family Suite",
+    description: "Designed with families in mind — flexible sleeping arrangements, extra storage, and ample space for everyone to relax and feel at home.",
     capacity: 5,
     keyAmenities: [
-      {iconKey: "family", text: {en: "Flexible Living Space", am: "ተለዋዋጭ ቦታ", om: "Bakka jireenya mijataa"}},
-      {iconKey: "wifi", text: {en: "Wi‑Fi for Everyone", am: "Wi‑Fi ለሁሉም", om: "Wi‑Fi nama hundaaaf"}},
-      {iconKey: "parking", text: {en: "Easy Parking", am: "ቀላል ማቆሚያ", om: "Parkii salphaa"}}
+      {iconKey: "family", text: "Flexible Living Space"},
+      {iconKey: "wifi", text: "Wi‑Fi for Everyone"},
+      {iconKey: "parking", text: "Easy Parking"}
     ],
     startingPriceUSD: 270,
-    coverImage: "/assets/images/hero/home-hero.jpg",
+    coverImage: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=85",
     galleryImages: [
-      "/assets/images/hero/home-hero.jpg",
-      "/assets/images/rooms/standard-room.jpg",
-      "/assets/images/rooms/deluxe-room.jpg"
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=85",
+      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&q=85",
+      "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=85"
     ],
     allAmenities: [
-      {en: "Family-friendly layout", am: "ለቤተሰብ ተስማሚ መዋቅር", om: "Qabiyyee maatii ni mijata"},
-      {en: "Extra towels & storage", am: "ተጨማሪ ፎጣ እና ማከማቻ", om: "Towel dabalataa fi bakka kuusaa"},
-      {en: "Comfort seating", am: "ምቾት መቀመጫ", om: "Tursiisaa mijataa"}
+      "Family-friendly layout",
+      "Extra towels & storage",
+      "Comfort seating"
     ]
   }
 ];
-
