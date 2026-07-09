@@ -20,7 +20,7 @@ export default async function EventsPage() {
     },
     {
       title: "Private Parties",
-      body: "Intimate and personalized — whether it's a birthday, anniversary, or reunion, we tailor the ambiance and menu to suit your celebration.",
+      body: "Intimate and personalized — whether it&apos;s a birthday, anniversary, or reunion, we tailor the ambiance and menu to suit your celebration.",
       image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=85"
     }
   ];

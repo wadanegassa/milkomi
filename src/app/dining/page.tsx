@@ -37,9 +37,9 @@ export default async function DiningPage() {
 
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
         <Reveal>
-          <h2 className="font-heading text-3xl">A restaurant you'll remember</h2>
+          <h2 className="font-heading text-3xl">A restaurant you&apos;ll remember</h2>
           <p className="mt-4 text-foreground/90 leading-relaxed">
-            Our on-site restaurant serves a delightful selection of traditional Ethiopian cuisine — including injera, wat, and kitfo — alongside continental breakfasts, fresh coffee, and refreshing beverages. Whether it's a quick breakfast before a meeting or a relaxed dinner, our kitchen is ready to impress.
+            Our on-site restaurant serves a delightful selection of traditional Ethiopian cuisine — including injera, wat, and kitfo — alongside continental breakfasts, fresh coffee, and refreshing beverages. Whether it&apos;s a quick breakfast before a meeting or a relaxed dinner, our kitchen is ready to impress.
           </p>
         </Reveal>
 
